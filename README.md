@@ -1,16 +1,11 @@
 # budget_tracker
 
-Budget tracker app
+Приложение состоит из начального экрана, а также 3 дополнительных экранов:
+- Экран для добавления новых транзакций, где пользователь может добавить новую транзакцию, выбрав тип, категорию, сумму и дату
+- Экран с историей всех транзацкий
+- Экран с диаграммами pie chart для просмотра статистики по доходам и расходам, а также по расходам по категориям
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+В качестве локального хранилища был выбран пакет shared_preferences из-за своей простоты и надежности
+Для глобального состояния был использован кубит AllTransactionsCubit, который отвечает за хранение всех транзакций, а также за добавление новых (тут можно это легко масштабировать для редактирования и удаления транзакций)
+В качестве локального стейт-менеджера для экрана добавления новой транзакции был использован FormCubit, с 4 FieldCubit для каждого поля, в которое необходим ввод данных
+FieldCubit также использовался для управления состояния текстовым полем, полем для выбора даты и Dropdown кнопки
